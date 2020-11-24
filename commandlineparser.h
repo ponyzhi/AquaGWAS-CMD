@@ -119,9 +119,13 @@ private:
 
 
     // !!! TAKE CARE !!!
+#ifdef QT_NO_DEBUG
+    QString toolpath = QCoreApplication::applicationDirPath() + "/tools/";    // Realease
+    QString scriptpath = QCoreApplication::applicationDirPath() + "/script/";
+#else
     QString toolpath = "/home/zhi/Desktop/H_G_CMD_new/code/tools/";  //!!attention! 这里最后一个要加个"/"不然跑不起来
     QString scriptpath = "/home/zhi/Desktop/H_G_CMD_new/code/script/";
-
+#endif
     QProcess *proc;
 
 };
